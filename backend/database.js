@@ -1,5 +1,4 @@
 const dbConnection = require("./sqlite");
-
 dbConnection
   .getDbConnection()
   .then((db) => {
@@ -9,19 +8,14 @@ dbConnection
     console.log(err);
     throw err;
   });
-
 let _db;
-
 function init(db) {
     _db = db;
 }
-
 const knex_db = require("./db-config");
-
 const dbinitialize = async () => {
     testBase.resetDatabase(knex_db);
 }
-
 const readTeachers = async () => {
     const sql = `SELECT * FROM teacher`
     return new Promise((resolve, reject) => {
@@ -88,21 +82,7 @@ const readTeacherInfo = async (id) => {
             })
             .catch((error) => {
                 reject(error);
-            });
-    });
-}
-
-const readStudents = async () => {
-    const sql = `SELECT * FROM student`
-    return new Promise((resolve, reject) => {
-        knex_db
-            .raw(sql)
-            .then((students) => {
-                resolve(students);
-            })
-            .catch((error) => {
-                reject(error);
-            });
+	@@ -106,55 +106,55 @@ const readStudents = async () => {
     });
 }
 
@@ -158,17 +138,7 @@ const readStudentInfo = async (id) => {
             })
             .catch((error) => {
                 reject(error);
-            });
-    });
-}
-
-module.exports = {
-    readTeachers,
-    readStudents,
-    addStudent,
-    addTeacher,
-    deleteTeacher,
-    deleteStudent,
+	@@ -172,5 +172,5 @@ module.exports = {
     readStudentInfo,
     readTeacherInfo,
     updateStudent,
