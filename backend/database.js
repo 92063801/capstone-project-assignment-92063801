@@ -39,13 +39,7 @@ const readTeacherInfo = async (id) => {
             })
             .catch((error) => {
                 reject(error);
-            });
-    });
-}
-
-const addTeacher = async (id, name, age) => {
-    const sql = `INSERT INTO teacher(id,name,age) values (?, ?, ?)`
-    return new Promise((resolve, reject) => {
+	@@ -36,7 +49,7 @@ const addTeacher = async (id, name, age) => {
         knex_db
             .raw(sql, [id, name, age])
             .then(() => {
@@ -53,13 +47,7 @@ const addTeacher = async (id, name, age) => {
             })
             .catch((error) => {
                 reject(error);
-            });
-    });
-}
-
-const updateTeacher = async (name, age, id) => {
-    const sql = `UPDATE teacher SET name=?, age=? WHERE id=?`
-    return new Promise((resolve, reject) => {
+	@@ -50,12 +63,11 @@ const updateTeacher = async (name, age, id) => {
         knex_db
             .raw(sql, [name, age, id])
             .then(() => {
@@ -71,8 +59,7 @@ const updateTeacher = async (name, age, id) => {
 }
 
 const deleteTeacher = async (id) => {
-    const sql = `DELETE FROM teacher WHERE id = ?`
-    return new Promise((resolve, reject) => {
+	@@ -64,35 +76,48 @@ const deleteTeacher = async (id) => {
         knex_db
             .raw(sql, [id])
             .then(() => {
@@ -121,13 +108,7 @@ const addStudent = async (id, name, age, hometown) => {
             })
             .catch((error) => {
                 reject(error);
-            });
-    });
-}
-
-const updateStudent = async (name, age, hometown, id) => {
-    const sql = `UPDATE student SET name=?, age=?, hometown=? WHERE id=?`
-    return new Promise((resolve, reject) => {
+	@@ -106,41 +131,35 @@ const updateStudent = async (name, age, hometown, id) => {
         knex_db
             .raw(sql, [name, age, hometown, id])
             .then(() => {
