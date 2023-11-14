@@ -1,4 +1,4 @@
-const dbConnection = require("./sqlite");
+const dbConnection = require("/sqlite");
 dbConnection
   .getDbConnection()
   .then((db) => {
@@ -15,7 +15,7 @@ function init(db) {
     _db = db;
 }
 
-const knex_db = require("./db-config");
+const knex_db = require("/db-config");
 const dbinitialize = async () => {
     testBase.resetDatabase(knex_db);
 }
