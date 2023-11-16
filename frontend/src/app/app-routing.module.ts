@@ -15,6 +15,7 @@ const routes: Routes = [
   { path: 'editStudent', component: EditStudentComponent },
   { path: 'editTeacher', component: EditTeacherComponent }
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
