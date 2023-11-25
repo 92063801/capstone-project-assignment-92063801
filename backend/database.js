@@ -5,7 +5,7 @@ dbConnection
     init(db);
   })
   .catch((err) => {
-    console.log(err);
+    //console.log(err);
     throw err;
   });
 
