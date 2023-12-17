@@ -4,6 +4,7 @@ dbConnection
   .then((db) => {
     init(db);
   })
+
   .catch((err) => {
     console.log(err);
     throw err;
